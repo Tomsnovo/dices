@@ -64,6 +64,16 @@ namespace dices
             Image image = sender as Image;
             int exos = int.Parse(image.Tag.ToString());
             int x = exos;
+            image.Tag = image.Tag += "picked";
+            Border border = new Border();
+            border.BorderThickness = new Thickness(2);
+            border.BorderBrush = Brushes.White;
+            border.CornerRadius = new CornerRadius(200);
+            PlayerGrid.Children.Add(border);
+            Grid.SetRowSpan(border, 3);
+            Grid.SetColumnSpan(border, 1);
+            Grid.SetRow(border,1);
+            Grid.SetColumn(border,x);
             if (true)
             {
                 switch (array[x])
